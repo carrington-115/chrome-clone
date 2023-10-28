@@ -3,7 +3,6 @@
 import styled from "styled-components";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
 
 export default function Header() {
   const pathname: string = usePathname();
@@ -46,11 +45,12 @@ export default function Header() {
 const Container = styled.header`
   max-width: 100%;
   min-height: 5vh;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgb(10, 10, 10);
   nav {
     display: flex;
     flex-direction: row;
     padding: 10px 1cm 0 1cm;
+    /* gap: -1cm; */
   }
   .links {
     width: 4cm;
@@ -59,7 +59,6 @@ const Container = styled.header`
     text-decoration: none;
     color: rgba(255, 255, 255, 0.7);
     font-size: 15px;
-    background-color: rgba(0, 0, 0, 0.8);
     cursor: default;
     display: flex;
     justify-content: space-between;
@@ -78,7 +77,8 @@ const Container = styled.header`
     }
     &:hover {
       background-color: rgb(43, 42, 42);
-      border-radius: 10px 10px 0 0;
+      /* border-radius: 10px 10px 0 0; */
+      border-radius: 10px;
     }
   }
   .links-active {
