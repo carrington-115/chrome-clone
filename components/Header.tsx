@@ -13,29 +13,37 @@ export default function Header() {
           className={`${pathname == "/" ? "links-active" : "links"}`}
           href="/"
         >
-          <p>Home</p>
-          <div className="icon">x</div>
+          Home
+          <div className="icon">
+            <img src="/images/close.svg" alt="close-icon" />
+          </div>
         </Link>
         <Link
           className={`${pathname == "/about" ? "links-active" : "links"}`}
           href="/about"
         >
-          <p>about</p>
-          <div className="icon">x</div>
+          about
+          <div className="icon">
+            <img src="/images/close.svg" alt="close-icon" />
+          </div>
         </Link>
         <Link
           className={`${pathname == "/services" ? "links-active" : "links"}`}
           href="/services"
         >
-          <p>services</p>
-          <div className="icon">x</div>
+          services
+          <div className="icon">
+            <img src="/images/close.svg" alt="close-icon" />
+          </div>
         </Link>
         <Link
           className={`${pathname == "/products" ? "links-active" : "links"}`}
           href="/products"
         >
-          <p>products</p>
-          <div className="icon">x</div>
+          products
+          <div className="icon">
+            <img src="/images/close.svg" alt="close-icon" />
+          </div>
         </Link>
       </nav>
     </Container>
@@ -49,7 +57,7 @@ const Container = styled.header`
   nav {
     display: flex;
     flex-direction: row;
-    padding: 10px 1cm 0 1cm;
+    padding: 10px 0.25cm 0 0.25cm;
     /* gap: -1cm; */
   }
   .links {
@@ -64,21 +72,27 @@ const Container = styled.header`
     justify-content: space-between;
     align-items: center;
     .icon {
-      color: white;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 1px 6px;
+      padding: 1.5px;
       border-radius: 50%;
       background-color: transparent;
+      width: 15px;
+      height: 15px;
+      img {
+        fill: white;
+        width: 100%;
+        height: 100%;
+      }
       &:hover {
         background-color: grey;
       }
     }
     &:hover {
       background-color: rgb(43, 42, 42);
-      /* border-radius: 10px 10px 0 0; */
-      border-radius: 10px;
+      border-radius: 10px 10px 0 0;
+      /* border-radius: 10px; */
     }
   }
   .links-active {
@@ -94,13 +108,19 @@ const Container = styled.header`
     justify-content: space-between;
     align-items: center;
     .icon {
-      color: white;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 1px 6px;
+      padding: 1.5px;
       border-radius: 50%;
       background-color: transparent;
+      width: 15px;
+      height: 15px;
+      img {
+        fill: white;
+        width: 100%;
+        height: 100%;
+      }
       &:hover {
         background-color: grey;
       }
