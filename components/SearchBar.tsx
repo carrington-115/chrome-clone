@@ -5,7 +5,7 @@ import styled from "styled-components";
 export default function SearchBar() {
   const [inputClickedState, setInputClickedState] = useState(false);
   return (
-    <Searchbar>
+    <SearchBarContainer>
       <div className="page-navigation-icons">
         <span>
           <img src="/images/arrow.svg" alt="left-arrow" />
@@ -46,19 +46,20 @@ export default function SearchBar() {
           <img src="/images/more.svg" alt="" />
         </span>
       </div>
-    </Searchbar>
+    </SearchBarContainer>
   );
 }
 
-const Searchbar = styled.div`
+const SearchBarContainer = styled.div`
   max-width: 100%;
   display: flex;
   padding: 0.25cm 0.25cm;
   justify-content: space-between;
+  height: 6.5vh;
   align-items: center;
   background-color: #3d3d3d;
-  height: 6.5vh;
   padding-bottom: 1cm;
+  border-bottom: 0.4px solid rgba(255, 255, 255, 0.5);
   span {
     padding: 5px;
     border-radius: 50%;
