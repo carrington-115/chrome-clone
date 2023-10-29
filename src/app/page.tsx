@@ -31,7 +31,7 @@ function SearchComponent() {
       </div>
       <div className="apps">
         {appsContent.map((item, index) => (
-          <a href={item.link} key={index}>
+          <a target="_blank" href={item.link} key={index}>
             <span>
               <h3>{item.logo}</h3>
             </span>
@@ -125,6 +125,6 @@ const Container = styled.section`
   max-width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 `;

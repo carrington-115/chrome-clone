@@ -19,28 +19,19 @@ export default function Header() {
           </div>
         </Link>
         <Link
-          className={`${pathname == "/about" ? "links-active" : "links"}`}
-          href="/about"
-        >
-          about
-          <div className="icon">
-            <img src="/images/close.svg" alt="close-icon" />
-          </div>
-        </Link>
-        <Link
-          className={`${pathname == "/services" ? "links-active" : "links"}`}
-          href="/services"
-        >
-          services
-          <div className="icon">
-            <img src="/images/close.svg" alt="close-icon" />
-          </div>
-        </Link>
-        <Link
-          className={`${pathname == "/products" ? "links-active" : "links"}`}
+          className={`${pathname == "/" ? "links-active" : "links"}`}
           href="/products"
         >
-          products
+          Products
+          <div className="icon">
+            <img src="/images/close.svg" alt="close-icon" />
+          </div>
+        </Link>
+        <Link
+          className={`${pathname == "/" ? "links-active" : "links"}`}
+          href="/search"
+        >
+          Search
           <div className="icon">
             <img src="/images/close.svg" alt="close-icon" />
           </div>
