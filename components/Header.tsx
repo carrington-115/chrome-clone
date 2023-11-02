@@ -18,17 +18,14 @@ export default function Header() {
             <img src="/images/close.svg" alt="close-icon" />
           </div>
         </Link>
-        <Link
-          className={`${pathname == "/" ? "links-active" : "links"}`}
-          href="/products"
-        >
+        <Link className="links" href="/products">
           Products
           <div className="icon">
             <img src="/images/close.svg" alt="close-icon" />
           </div>
         </Link>
         <Link
-          className={`${pathname == "/" ? "links-active" : "links"}`}
+          className={`${pathname == "/search" ? "links-active" : "links"}`}
           href="/search"
         >
           Search
