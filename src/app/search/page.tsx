@@ -12,19 +12,21 @@ export default function Page() {
         <div className="left-content">
           {searchSuggestions.map((suggestion, index) => {
             return (
-              <div key={index}>
+              <a href={suggestion.url} className="item" key={index}>
                 <span className="suggestion-header">
                   <img src={suggestion.image} alt={suggestion.shortName} />
                   <span className="header-title">
                     <h3>{suggestion.shortName}</h3>
-                    <p>{suggestion.url}</p>
+                    <a className="head-link" href={suggestion.url}>
+                      {suggestion.url}
+                    </a>
                   </span>
                 </span>
                 <span className="suggestion-body">
                   <h2>{suggestion.name}</h2>
                   <p>{suggestion.description}</p>
                 </span>
-              </div>
+              </a>
             );
           })}
         </div>
@@ -49,6 +51,73 @@ const Container = styled.section`
       width: 60%;
       border-radius: 0.5rem;
       color: white;
+      margin-left: 2cm;
+      .item {
+        cursor: pointer;
+        margin: 2rem 0;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        max-width: 80%;
+        &:hover {
+        }
+        .suggestion-header {
+          display: flex;
+          align-items: flex-start;
+          img {
+            width: 1rem;
+            height: 1rem;
+            padding: 0.5rem;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+          }
+          .header-title {
+            display: flex;
+            flex-direction: column;
+            margin-left: 0.5rem;
+
+            h3 {
+              font-size: 1.5rem;
+              font-weight: normal;
+              margin: 0;
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+            .head-link {
+              font-size: 0.8rem;
+              margin: 0;
+              text-decoration: none;
+              color: #c7c7c7;
+              margin-top: 5px;
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+        .suggestion-body {
+          padding-left: 3rem;
+          margin: 0;
+          h2 {
+            font-size: 1.5rem;
+            font-weight: normal;
+            color: blue;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+          p {
+            font-size: 0.8rem;
+            color: grey;
+            text-align: normal;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
     }
     aside {
       width: 35%;

@@ -12,9 +12,10 @@ const searchSuggestions: data[] = [
     id: "1",
     shortName: "Aasales",
     name: "Aasales Impex",
-    description: "Aasales Impex Private Limited",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo temporibus cumque minima, nihil quod cupiditate cum distinctio quos. Temporibus quos asperiores nam sequi in, sint ratione rerum voluptates possimus iste.",
     url: "https://www.aasalesimpex.com",
-    image: "https://www.aasalesimpex.com/images/logo.png",
+    image: "/images/search.svg",
     category: "Logistics company",
   },
   {
@@ -23,7 +24,7 @@ const searchSuggestions: data[] = [
     name: "Aasales Impex",
     description: "Aasales Impex Private Limited",
     url: "https://www.aasalesimpex.com",
-    image: "https://www.aasalesimpex.com/images/logo.png",
+    image: "/images/search.svg",
     category: "Logistics company",
   },
   {
@@ -32,7 +33,7 @@ const searchSuggestions: data[] = [
     name: "Aasales Impex",
     description: "Aasales Impex Private Limited",
     url: "https://www.aasalesimpex.com",
-    image: "https://www.aasalesimpex.com/images/logo.png",
+    image: "/images/search.svg",
     category: "Logistics company",
   },
 ];
