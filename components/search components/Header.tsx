@@ -2,10 +2,13 @@
 
 import styled from "styled-components";
 import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [placeHolderValue, setPlaceHolderValue] = useState("Search Google");
   const [inputValue, setInputValue] = useState("");
+  const linkActive = usePathname();
   return (
     <HeaderContainer>
       <div className="top-layer">
@@ -45,7 +48,39 @@ export default function Header() {
           </span>
         </div>
       </div>
-      <div className="bottom-layer"></div>
+      <div className="bottom-layer">
+        <div className="main-header">
+          <Link
+            className={`${linkActive === "/search" ? "link-active" : "links"}`}
+            href="/search"
+          >
+            <span className="icon">
+              <img src="/images/search.svg" alt="search-icon" />
+            </span>
+            <p>All</p>
+          </Link>
+          <Link
+            className={`${
+              linkActive === "/search/images" ? "link-active" : "links"
+            }`}
+            href="/search/images"
+          >
+            <span className="icon">
+              <img src="/images/images.svg" alt="images-icon" />
+            </span>
+          </Link>
+          <Link
+            className={`${
+              linkActive === "/search/videos" ? "link-active" : "links"
+            }`}
+            href="/search/videos"
+          >
+            <span className="icon">
+              <img src="/images/videos.svg" alt="videos-icon" />
+            </span>
+          </Link>
+        </div>
+      </div>
     </HeaderContainer>
   );
 }
@@ -62,6 +97,7 @@ const HeaderContainer = styled.nav`
     }
     .logo {
       width: 10%;
+      cursor: pointer;
       img {
         width: 100px;
         height: 30px;
@@ -166,5 +202,34 @@ const HeaderContainer = styled.nav`
     }
   }
   .bottom-layer {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .main-header {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      .links {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+        .icon {
+          width: 16px;
+          height: 16px;
+          margin-right: 0.5rem;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        p {
+          font-size: 0.5rem;
+        }
+      }
+      .link-active {
+      }
+    }
   }
 `;

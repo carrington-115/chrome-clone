@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "../../components/Header";
 import SearchBar from "../../components/SearchBar";
-import InnerHeader from "../../components/InnerHeader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,7 +22,6 @@ export default function RootLayout({
       <body className={inter.className}>
         <Header />
         <SearchBar />
-        <InnerHeader />
         <main>{children}</main>
       </body>
     </html>
