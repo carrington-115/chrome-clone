@@ -27,6 +27,7 @@ export default function Header() {
           <span
             className={`${inputValue ? "cancel-icon" : ""}`}
             onClick={() => setInputValue("")}
+            style={{ display: `${inputValue ? "flex" : "none"}` }}
           >
             <img src="/images/close.svg" alt="cancel-icon" />
           </span>
@@ -68,16 +69,19 @@ export default function Header() {
             <span className="icon">
               <img src="/images/images.svg" alt="images-icon" />
             </span>
+            <p>Images</p>
           </Link>
           <Link
             className={`${
               linkActive === "/search/videos" ? "link-active" : "links"
-            }`}
+            }
+            `}
             href="/search/videos"
           >
             <span className="icon">
               <img src="/images/videos.svg" alt="videos-icon" />
             </span>
+            <p>Videos</p>
           </Link>
         </div>
       </div>
@@ -108,11 +112,11 @@ const HeaderContainer = styled.nav`
       justify-content: space-around;
       align-items: center;
       width: 45%;
-      height: 40px;
+      height: 30px;
       border: 1px solid white;
       border-radius: 30px;
-      background-color: white;
       padding: 0.5em 1em;
+      background-color: white;
       .input-bar {
         display: flex;
         justify-content: center;
@@ -206,18 +210,25 @@ const HeaderContainer = styled.nav`
     display: flex;
     justify-content: center;
     align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
     .main-header {
-      width: 50%;
       display: flex;
+      justify-content: flex-start;
       align-items: center;
-      .links {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+      width: 50%;
+      .links,
+      .link-active {
         color: white;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0.5rem 1rem 1px 1rem;
+        border-bottom: 3px solid transparent;
+        padding-bottom: 5px;
         .icon {
-          width: 16px;
-          height: 16px;
+          width: 24px;
+          height: 24px;
           margin-right: 0.5rem;
           img {
             width: 100%;
@@ -225,10 +236,11 @@ const HeaderContainer = styled.nav`
           }
         }
         p {
-          font-size: 0.5rem;
+          font-size: 1rem;
         }
       }
       .link-active {
+        border-color: #6767ee;
       }
     }
   }

@@ -1,4 +1,4 @@
-import { appContext } from "../types/appTypes";
+import { appContext, data, imageSearch } from "../types/appTypes";
 
 const appsContent: appContext[] = [
   { logo: "A", title: "Aasales", link: "https://www.aasalesimpex.com" },
@@ -7,4 +7,8 @@ const appsContent: appContext[] = [
   { logo: "I", title: "Integral University", link: "https://www.iul.ac.in" },
 ];
 
-export { appsContent };
+const searchSuggestions: data[] = [];
+
+const imageSuggestions: imageSearch[] = [];
+
+export { appsContent, searchSuggestions, imageSuggestions };

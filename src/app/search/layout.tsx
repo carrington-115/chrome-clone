@@ -11,8 +11,7 @@ export default function SearchLayout({
     <Container>
       <Header />
       <main>
-        <section></section>
-        <aside></aside>
+        <section>{children}</section>
       </main>
     </Container>
   );
