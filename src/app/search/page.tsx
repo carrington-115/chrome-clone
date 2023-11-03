@@ -1,11 +1,33 @@
 "use client";
 import styled from "styled-components";
+import {
+  searchSuggestions,
+  imageSuggestions,
+} from "../../../constants/data/constants";
 
 export default function Page() {
   return (
     <Container>
       <section className="content">
-        <div className="left-content">left</div>
+        <div className="left-content">
+          {searchSuggestions.map((suggestion, index) => {
+            return (
+              <div key={index}>
+                <span className="suggestion-header">
+                  <img src={suggestion.image} alt={suggestion.shortName} />
+                  <span className="header-title">
+                    <h3>{suggestion.shortName}</h3>
+                    <p>{suggestion.url}</p>
+                  </span>
+                </span>
+                <span className="suggestion-body">
+                  <h2>{suggestion.name}</h2>
+                  <p>{suggestion.description}</p>
+                </span>
+              </div>
+            );
+          })}
+        </div>
         <aside>right</aside>
       </section>
     </Container>
