@@ -9,6 +9,7 @@ export interface imageSearch {
   id: string;
   url: string;
   description: string;
+  link: string;
 }
 export interface data {
   id: string;

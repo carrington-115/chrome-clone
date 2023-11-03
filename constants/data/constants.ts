@@ -38,6 +38,31 @@ const searchSuggestions: data[] = [
   },
 ];
 
-const imageSuggestions: imageSearch[] = [];
+const imageSuggestions: imageSearch[] = [
+  {
+    id: "1",
+    url: "/images/search-image.png",
+    description: "Aasales Impex Private Limited",
+    link: "aasalesimpex.com",
+  },
+  {
+    id: "1",
+    url: "/images/search-image.png",
+    description: "Aasales Impex Private Limited",
+    link: "aasalesimpex.com",
+  },
+  {
+    id: "1",
+    url: "/images/search-image.png",
+    description: "Aasales Impex Private Limited",
+    link: "aasalesimpex.com",
+  },
+  {
+    id: "1",
+    url: "/images/search-image.png",
+    description: "Aasales Impex Private Limited",
+    link: "aasalesimpex.com",
+  },
+];
 
 export { appsContent, searchSuggestions, imageSuggestions };

@@ -4,12 +4,14 @@ import {
   searchSuggestions,
   imageSuggestions,
 } from "../../../constants/data/constants";
+import ImageSuggestions from "../../../components/search components/ImageSuggestions";
 
 export default function Page() {
   return (
     <Container>
       <section className="content">
         <div className="left-content">
+          <ImageSuggestions />
           {searchSuggestions.map((suggestion, index) => {
             return (
               <a href={suggestion.url} className="item" key={index}>
