@@ -7,7 +7,35 @@ const appsContent: appContext[] = [
   { logo: "I", title: "Integral University", link: "https://www.iul.ac.in" },
 ];
 
-const searchSuggestions: data[] = [];
+const searchSuggestions: data[] = [
+  {
+    id: "1",
+    shortName: "Aasales",
+    name: "Aasales Impex",
+    description: "Aasales Impex Private Limited",
+    url: "https://www.aasalesimpex.com",
+    image: "https://www.aasalesimpex.com/images/logo.png",
+    category: "Logistics company",
+  },
+  {
+    id: "1",
+    shortName: "Aasales",
+    name: "Aasales Impex",
+    description: "Aasales Impex Private Limited",
+    url: "https://www.aasalesimpex.com",
+    image: "https://www.aasalesimpex.com/images/logo.png",
+    category: "Logistics company",
+  },
+  {
+    id: "1",
+    shortName: "Aasales",
+    name: "Aasales Impex",
+    description: "Aasales Impex Private Limited",
+    url: "https://www.aasalesimpex.com",
+    image: "https://www.aasalesimpex.com/images/logo.png",
+    category: "Logistics company",
+  },
+];
 
 const imageSuggestions: imageSearch[] = [];
 
