@@ -6,17 +6,17 @@ import { useEffect, useState } from "react";
 export default function ImageSuggestions() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const horizontalScrollElement = document.getElementById("horizontal-gallery");
+  const maxScroll =
+    horizontalScrollElement && horizontalScrollElement?.scrollWidth;
 
   const goForward = () => {
-    setCurrentIndex(currentIndex + 200);
-    const maxScroll =
-      horizontalScrollElement && horizontalScrollElement?.scrollWidth;
+    setCurrentIndex(currentIndex + 400);
     if (horizontalScrollElement && maxScroll && currentIndex > maxScroll) {
       setCurrentIndex(maxScroll);
     }
   };
   const goBackward = () => {
-    setCurrentIndex(currentIndex - 200);
+    setCurrentIndex(currentIndex - 400);
     if (currentIndex < 0) {
       setCurrentIndex(0);
     }
@@ -102,6 +102,7 @@ const Container = styled.section`
       overflow-x: scroll;
       display: flex;
       gap: 1rem;
+      /* scroll-behavior: smooth; */
       &::-webkit-scrollbar {
         display: none;
       }
