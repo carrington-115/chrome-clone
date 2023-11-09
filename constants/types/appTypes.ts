@@ -20,3 +20,4 @@ export interface data {
   image: string;
   category: string;
 }
+
