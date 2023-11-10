@@ -64,15 +64,21 @@ export default function SearchImageContainer() {
     profileLetter: "",
   });
 
-  // useEffect(() => {
-  //   pullImageFromAxios();
-  // });
-
   return (
     <Container>
       <section className="inner-section">
-        {testDataSet.map(() => (
-          <div className="image-item"></div>
+        {testDataSet.map((imageItem, index) => (
+          <div className="image-item" key={index}>
+            <div className="image-container">
+              <img src={imageItem.imageUrl} alt={`image-${index + 1}`} />
+            </div>
+            <div className="user-section">
+              <span>
+                <h1>{imageItem.profileLetter}</h1>
+                <h3>{imageItem.username}</h3>
+              </span>
+            </div>
+          </div>
         ))}
       </section>
     </Container>
@@ -80,8 +86,16 @@ export default function SearchImageContainer() {
 }
 
 const Container = styled.section`
+  width: 100%;
+  padding: 2rem 1rem;
   .inner-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     .image-item {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 `;
