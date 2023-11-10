@@ -1,8 +1,6 @@
 "use client";
 import styled from "styled-components";
-import { useEffect, useState } from "react";
-import { pullImageFromAxios } from "../../constants/data/fetchFromAPIS";
-import { get } from "http";
+import { useState } from "react";
 
 function getFirstLetter(string: string) {
   return string.charAt(0);
@@ -54,8 +52,6 @@ const testDataSet: testDataType[] = [
   },
 ];
 
-get;
-
 export default function SearchImageContainer() {
   const [imageActiveState, setimageActiveState] = useState<testDataType>({
     imageUrl: "",
@@ -75,8 +71,8 @@ export default function SearchImageContainer() {
             <div className="user-section">
               <span>
                 <h1>{imageItem.profileLetter}</h1>
-                <h3>{imageItem.username}</h3>
               </span>
+              <h3>{imageItem.username}</h3>
             </div>
           </div>
         ))}
@@ -86,16 +82,60 @@ export default function SearchImageContainer() {
 }
 
 const Container = styled.section`
-  width: 100%;
+  max-width: 100%;
   padding: 2rem 1rem;
   .inner-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+    max-width: 100%;
+    display: block;
+    column-count: 3;
+    column-gap: 1rem;
     .image-item {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 1rem;
+      cursor: pointer;
+      transition: all 2s 250 cubic-bezier(0.64, 0.14, 0.56, 0.88);
+      .image-container {
+        width: 100%;
+        height: auto;
+        &:hover {
+          img {
+            transform: scale(1.05, 1.05);
+            border-radius: 0;
+          }
+        }
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 15px;
+        }
+      }
+      .user-section {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 1cm;
+        align-items: center;
+        margin-top: 1rem;
+        span {
+          width: 24px;
+          height: 24px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: white;
+          padding: 1rem;
+          border-radius: 50%;
+          h1 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: darkblue;
+          }
+        }
+        h3 {
+          font-size: 1.5rem;
+        }
+      }
     }
   }
 `;

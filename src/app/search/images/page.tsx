@@ -1,6 +1,8 @@
 "use client";
 import SearchImageContainer from "../../../../components/search components/SearchImageContainer";
 
+
+
 const Page = () => {
   return (
     <div
