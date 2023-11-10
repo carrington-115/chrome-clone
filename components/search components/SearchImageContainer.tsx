@@ -1,6 +1,7 @@
 "use client";
 import styled from "styled-components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import SearchImagePopup from "./SearchImagePopup";
 
 function getFirstLetter(string: string) {
   return string.charAt(0);
@@ -60,22 +61,42 @@ export default function SearchImageContainer() {
     profileLetter: "",
   });
 
+  function sendImageData(imageData: testDataType) {
+    setimageActiveState(imageData);
+  }
+
+  useEffect(() => {
+    console.log(imageActiveState);
+  }, [imageActiveState]);
+
   return (
     <Container>
+      <SearchImagePopup
+        imageUrl={imageActiveState.imageUrl}
+        username={imageActiveState.username}
+        anchorLink={imageActiveState.anchorLink}
+        profileLetter={imageActiveState.profileLetter}
+      />
       <section className="inner-section">
-        {testDataSet.map((imageItem, index) => (
-          <div className="image-item" key={index}>
-            <div className="image-container">
-              <img src={imageItem.imageUrl} alt={`image-${index + 1}`} />
+        {testDataSet.map((imageItem, index) => {
+          return (
+            <div
+              className="image-item"
+              key={index}
+              onClick={() => sendImageData(imageItem)}
+            >
+              <div className="image-container">
+                <img src={imageItem.imageUrl} alt={`image-${index + 1}`} />
+              </div>
+              <div className="user-section">
+                <span>
+                  <h1>{imageItem.profileLetter}</h1>
+                </span>
+                <h3>{imageItem.username}</h3>
+              </div>
             </div>
-            <div className="user-section">
-              <span>
-                <h1>{imageItem.profileLetter}</h1>
-              </span>
-              <h3>{imageItem.username}</h3>
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </section>
     </Container>
   );
@@ -100,7 +121,6 @@ const Container = styled.section`
         height: auto;
         &:hover {
           img {
-            transform: scale(1.05, 1.05);
             border-radius: 0;
           }
         }
