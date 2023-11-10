@@ -1,10 +1,15 @@
 "use client";
+import SearchImageContainer from "../../../../components/search components/SearchImageContainer";
 
 const Page = () => {
   return (
-    <div>
-      <h1>Search Images</h1>
-      <p>This is a Next.js page.</p>
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+      }}
+    >
+      <SearchImageContainer />
     </div>
   );
 };
