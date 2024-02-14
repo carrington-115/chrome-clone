@@ -21,3 +21,7 @@ export interface data {
   category: string;
 }
 
+export interface globalAppContext {
+  showSideBar: boolean;
+  toggleSideBar: (showSideBar: boolean) => void;
+}

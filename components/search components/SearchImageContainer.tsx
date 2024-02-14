@@ -2,6 +2,8 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import SearchImagePopup from "./SearchImagePopup";
+// import { useDispatch, useSelector } from "react-redux";
+// import { openSideBar } from "../../src/app/global/features/sideBarSlice";
 
 function getFirstLetter(string: string) {
   return string.charAt(0);
@@ -60,13 +62,17 @@ export default function SearchImageContainer() {
     anchorLink: "",
     profileLetter: "",
   });
+  // const sideBarState = useSelector((state: any) => state.sidebar.showSideBar);
+  // const dispatch = useDispatch();
 
   function sendImageData(imageData: testDataType) {
     setimageActiveState(imageData);
+    // dispatch(openSideBar());
   }
 
   useEffect(() => {
     console.log(imageActiveState);
+    // console.log("Side bar state:  ", sideBarState);
   }, [imageActiveState]);
 
   return (

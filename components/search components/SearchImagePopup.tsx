@@ -1,12 +1,14 @@
 "use client";
 import styled from "styled-components";
+import "../../public/styles/constants.css";
+// import { useSelector, useDispatch } from "react-redux";
+// import { closeSideBar } from "../../src/app/global/features/sideBarSlice";
 
 type testDataType = {
   imageUrl: string;
   username: string;
   anchorLink: string;
   profileLetter: string;
-  show: boolean;
 };
 
 const otherSuggestions: string[] = [
@@ -25,8 +27,15 @@ export default function SearchImagePopup({
   profileLetter,
   username,
   imageUrl,
-  show,
+  anchorLink,
 }: testDataType) {
+  // const sideBarState = useSelector((state: any) => state.sidebar.showSideBar);
+  // const dispatch = useDispatch();
+  // const sideBarActivity = sideBarState
+  //   ? "set-sidebar-active"
+  //   : "set-sidebar-inactive";
+
+  // console.log(sideBarActivity);
   return (
     <Container>
       <div className="close-btn">

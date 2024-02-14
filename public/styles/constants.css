@@ -1,0 +1,7 @@
+.set-sidebar-inactive {
+  transform: translateX(0%);
+}
+
+.set-sidebar-active {
+  transform: translateX(100%);
+}

@@ -1,4 +1,9 @@
-import { appContext, data, imageSearch } from "../types/appTypes";
+import {
+  appContext,
+  data,
+  globalAppContext,
+  imageSearch,
+} from "../types/appTypes";
 
 const appsContent: appContext[] = [
   { logo: "A", title: "Aasales", link: "https://www.aasalesimpex.com" },
@@ -65,4 +70,11 @@ const imageSuggestions: imageSearch[] = [
   },
 ];
 
-export { appsContent, searchSuggestions, imageSuggestions };
+const searchContextData: globalAppContext = {
+  showSideBar: false,
+  toggleSideBar: (data) => {
+    return (searchContextData.showSideBar = data);
+  },
+};
+
+export { appsContent, searchSuggestions, imageSuggestions, searchContextData };
